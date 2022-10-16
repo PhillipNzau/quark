@@ -1,1 +1,28 @@
 /* You can add global styles to this file, and also import other style files */
+@import "colors";
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  // Defines what 1 rem is 10px
+  font-size: 62.5%;
+  p {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+body {
+  box-sizing: border-box;
+  height: 100vh;
+  background-color: $color-primary;
+}
+
+textarea:focus, input:focus {
+  outline: none;
+}

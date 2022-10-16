@@ -1,0 +1,11 @@
+@import "colors";
+$padding-default: 3rem 1rem;
+.side-nav {
+  background-color: $color-secondary;
+  width: 30rem;
+  height: 100vh;
+  padding: $padding-default;
+}
+.main-content {
+  padding: $padding-default;
+}
