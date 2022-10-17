@@ -29,3 +29,55 @@ textarea:focus, input:focus {
   outline: none;
 }
 
+p.heading-default {
+  color: white;
+  font-size: 1.5rem;
+  &--black {
+    color: black;
+  }
+}
+
+p.paragraph-default {
+  color: $color-gray-1;
+  font-size: 1.2rem;
+  &--black {
+    color: black;
+  }
+}
+
+.status-badge {
+  position: absolute;
+  top: 75%;
+  left: 80%;
+
+  width: 1rem;
+  height: 1rem;
+  border: 0.5px solid $color-gray-1;
+  border-radius: 50%;
+
+  &--online {
+    background-color: green;
+  }
+
+  &--offline {
+    background-color: red;
+  }
+}
+
+
+.chats-p {
+  text-transform: uppercase;
+  padding: 1rem 0 2rem 1rem ;
+
+}
+
+.limit-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+

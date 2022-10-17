@@ -1,14 +1,14 @@
 @import "colors";
-$padding-default: 3rem 1rem;
 .side-nav {
   position: relative;
 
   background-color: $color-secondary;
   width: 30rem;
   height: 100vh;
-  padding: $padding-default;
 
 }
 .main-content {
-  padding: $padding-default;
+  width: calc(100vw - 30rem);
+  height: 100vh;
+  background-color: lighten(gray, 75%);
 }

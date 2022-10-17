@@ -1,0 +1,50 @@
+@import "colors";
+.chats-top-bar{
+  background-color: white;
+  //border-bottom: 1px solid $color-gray-1;
+  box-shadow: 0 8px 6px -8px $color-gray-1;
+  width: 100%;
+  height: 7.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 5rem ;
+
+}
+.chat-profile {
+  &-container {
+    display: flex;
+    align-items: center;
+  }
+  &-image {
+    position: relative;
+    img {
+      width: 4rem;
+      height: 4rem;
+      border-radius: 50%;
+      display: block;
+      object-fit: cover;
+    }
+  }
+  &-name {
+    padding: 0 3rem;
+  }
+  &-setting {
+    svg {
+      fill: $color-gray-1;
+      width: 5rem;
+      height: 5rem;
+
+      cursor: pointer;
+    }
+
+  }
+}
+
+ul.show {
+
+  width: 15rem;
+  height: 15rem;
+  margin-top: 2rem;
+}
