@@ -1,33 +1,36 @@
 
 <input type="text" class="form-control search-user" aria-label="Sizing example input" placeholder="Search People...">
 <!--Contacts listed-->
-<div class="contact-container">
-  <div class="contact-image">
-    <img
-      src="https://static.remove.bg/remove-bg-web/c05ac62d076574fad1fbc81404cd6083e9a4152b/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
-      alt="contact img"
-      class="avatar-default avatar-default--contacts">
-    <div class="status-badge status-badge--online">
-  </div>
+<p class="paragraph-default chats-p">Active Contacts</p>
 
-  </div>
-
-  <div class="contact-content-container">
-    <div class="contact-content-name">
-      <p class="d-flex heading-default">Mathew </p>
-      <p class="contact-content-time">Just now</p>
-
+<div class="contact">
+  <div class="contact-container" *ngFor="let _ of count">
+    <div class="contact-image">
+      <img
+        src="https://static.remove.bg/remove-bg-web/c05ac62d076574fad1fbc81404cd6083e9a4152b/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+        alt="contact img"
+        class="avatar-default avatar-default--contacts">
+      <div class="status-badge status-badge--online">
+      </div>
     </div>
 
-    <div class="contact-content-message">
-      <p class="paragraph-default">Hey Paul, Whats up </p>
+    <div class="contact-content-container">
+      <div class="contact-content-name">
+        <p class="d-flex heading-default">Mathew </p>
+        <p class="contact-content-time">Just now</p>
 
-      <div class="contact-content-status">
-        <svg
-          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-          class="w-6 h-6">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
-        </svg></div>
+      </div>
+
+      <div class="contact-content-message">
+        <p class="paragraph-default">Hey Paul, Whats up </p>
+
+        <div class="contact-content-status">
+          <svg
+            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+            class="w-6 h-6">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/>
+          </svg></div>
+      </div>
     </div>
   </div>
 </div>
