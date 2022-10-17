@@ -1,5 +1,43 @@
 @import "colors";
-.contact{
+
+.profile {
+  &-tab-container {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: darken($color-secondary, 10%);
+    margin: 0 -1rem;
+    padding: 3rem 1.5rem;
+  }
+
+  &-tab-image {
+    display: flex;
+    align-items: center;
+  }
+
+  &-name {
+    padding: 0 1.5rem;
+  }
+
+  &-tab-icon {
+    color: darken(white, 55%);
+
+    svg {
+      width: 2.5rem;
+      height: 2.5rem;
+
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.contact {
   &-container {
     width: 100%;
     height: 6rem;
@@ -11,6 +49,7 @@
 
     display: flex;
   }
+
   &-image {
     position: relative;
   }
@@ -21,11 +60,13 @@
       height: 100%;
       padding: 0 1.5rem;
     }
+
     &-name {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
+
     &-time {
       justify-self: end;
     }
@@ -34,6 +75,7 @@
       display: flex;
       justify-content: space-between;
     }
+
     &-status {
       svg {
         width: 1.5rem;
@@ -43,17 +85,28 @@
   }
 
 }
+
 .avatar-default {
-  width: 4rem;
-  height: 4rem;
   border-radius: 50%;
   display: block;
   object-fit: cover;
+
+  &--contacts {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &--profile {
+    width: 3rem;
+    height: 3rem;
+  }
 }
+
 p.heading-default {
   color: white;
   font-size: 1.5rem;
 }
+
 p.paragraph-default {
   color: $color-gray-1;
   font-size: 1.2rem;
@@ -72,10 +125,30 @@ p.paragraph-default {
   &--online {
     background-color: green;
   }
+
   &--offline {
     background-color: red;
   }
 }
+
 input:focus {
   outline: none;
+}
+
+input.search-user {
+  width: 100%;
+  height: 4.5rem;
+  background-color: lighten($color-secondary, 1%);
+
+  border: 1px solid darken($color-secondary, 3%);
+  border-radius: 1rem;
+  margin-bottom: 2rem;
+  padding: 0 2rem;
+
+  color: White;
+  font-size: 1.2rem;
+
+  &:focus {
+    box-shadow: none;
+  }
 }
