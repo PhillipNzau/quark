@@ -63,16 +63,17 @@ ul.show {
   overflow-x: scroll;
   &::-webkit-scrollbar {width: 0 !important};
   margin: 1rem 3rem .2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 
 }
 .message {
   display: flex;
+  &__receiver {
+   display: flex;
+    justify-content: end;
+  }
 
   &__content {
-    max-width: max-content;
+    max-width: 80%;
     min-height: 5rem;
     margin-top: 2rem;
 
@@ -141,7 +142,7 @@ textarea.send-message {
   padding: 1rem;
   width: 100%;
   height: 4.5rem;
-  border: 1px solid darken($color-secondary, 3%);
+  border: 1px solid darken($color-gray-1, 3%);
   border-radius: 1rem;
   font-size: 1.2rem;
   margin: 0 1rem;
@@ -154,4 +155,7 @@ textarea.send-message {
 .send-icon {
   width: 2rem;
   height: 2rem;
+  &:hover {
+    cursor: pointer;
+  }
 }

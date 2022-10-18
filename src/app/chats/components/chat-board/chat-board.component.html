@@ -40,7 +40,7 @@
 <div class="chat-container">
   <p class="paragraph-default text-center">YESTERDAY</p>
  <div *ngFor="let _ of count">
-   <div class="message">
+   <div class="message message__sender">
      <div class="profile-tab-image contact-image message__icon message__icon--sender">
        <img
          src="https://static.remove.bg/remove-bg-web/c05ac62d076574fad1fbc81404cd6083e9a4152b/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
@@ -48,12 +48,12 @@
          class="avatar-default avatar-default--profile">
      </div>
      <div class="message__content message__content--received">
-       <p class="message__paragraph">lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi, asperiores eos error nostrum omnis quaerat reiciendis sed tenetur! Aperiam error eveniet exercitationem explicabo nostrum nulla odit quo quos, sed?</p>
+       <p class="message__paragraph">lorem Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, amet atque ducimus ea explicabo facere hic illum ipsam itaque iure porro, quam repudiandae rerum sed sint suscipit voluptate. Perspiciatis, veritatis! </p>
        <p class="message__time message__time--sender">2:54 pm</p>
      </div>
    </div>
 
-   <div class="message">
+   <div class="message message__receiver">
      <div class="profile-tab-image contact-image message__icon message__icon--receiver">
        <img
          src="https://static.remove.bg/remove-bg-web/c05ac62d076574fad1fbc81404cd6083e9a4152b/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
@@ -74,6 +74,7 @@
     class="emoji-mart"
     *ngIf="isEmojiPickerVisible"
     (emojiSelect)="addEmoji($event)"
+    [isNative]="true"
     style="position: absolute; bottom: 50px"
 
     title="Choose your emoji"></emoji-mart>
