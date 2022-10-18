@@ -38,13 +38,87 @@
 
       cursor: pointer;
     }
-
   }
 }
 
-ul.show {
+.profile-setting-items {
+  font-size: 1.3rem;
+  color: $color-gray-1;
+  padding: 2rem 3rem;
 
-  width: 15rem;
-  height: 15rem;
-  margin-top: 2rem;
+  &:hover {
+    color: #0c0711;
+  }
+
 }
+ul.show {
+  width: 15rem;
+  height: 18rem;
+  padding: 0;
+  background-color: #0c0711;
+}
+.chat-container {
+  height: calc(100vh - 14rem);
+  overflow-x: scroll;
+  &::-webkit-scrollbar {width: 0 !important};
+  margin: 1rem 3rem .2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+}
+.message {
+  display: flex;
+
+  &__content {
+    max-width: max-content;
+    min-height: 5rem;
+    margin-top: 2rem;
+
+
+    &--received {
+      background-color: #8646f9;
+      border-radius: 15px 15px 15px 0;
+      color: white;
+    }
+
+    &--sent {
+      background-color: #ded0f8;
+      border-radius: 15px 15px 0 15px;
+    }
+
+    p {
+      &:first-child {
+        padding: 1rem 2rem;
+      }
+      &:last-child{
+
+      }
+    }
+  }
+
+  &__icon {
+    align-self: end;
+    &--sender {
+      padding-right: 1rem;
+    }
+    &--receiver {
+      padding-left: 1rem;
+      order: 2;
+    }
+  }
+
+  &__time {
+    padding: 0 2rem 1rem;
+    margin-top: -1rem;
+    color: #9b9999;
+    &--sender {
+      text-align: end;
+    }
+
+    &--receiver {
+      text-align: start;
+    }
+  }
+}
+

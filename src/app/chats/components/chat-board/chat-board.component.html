@@ -23,15 +23,49 @@
     </svg>
 
     <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
-      <li><a class="dropdown-item" href="#">
+      <li><a class="dropdown-item profile-setting-items" href="#">
         Contact info
       </a></li>
-      <li><a class="dropdown-item" href="#">
+      <li><a class="dropdown-item profile-setting-items" href="#">
         Close chat
       </a></li>
-      <li><a class="dropdown-item" href="#">
+      <li><a class="dropdown-item profile-setting-items" href="#">
         Clear messages
       </a></li>
     </ul>
   </div>
+</div>
+
+<!--chat display section-->
+<div class="chat-container">
+  <p class="paragraph-default text-center">YESTERDAY</p>
+ <div *ngFor="let _ of count">
+   <div class="message">
+     <div class="profile-tab-image contact-image message__icon message__icon--sender">
+       <img
+         src="https://static.remove.bg/remove-bg-web/c05ac62d076574fad1fbc81404cd6083e9a4152b/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+         alt="contact img"
+         class="avatar-default avatar-default--profile">
+     </div>
+     <div class="message__content message__content--received">
+       <p class="message__paragraph">lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi, asperiores eos error nostrum omnis quaerat reiciendis sed tenetur! Aperiam error eveniet exercitationem explicabo nostrum nulla odit quo quos, sed?</p>
+       <p class="message__time message__time--sender">2:54 pm</p>
+     </div>
+   </div>
+
+   <div class="message">
+     <div class="profile-tab-image contact-image message__icon message__icon--receiver">
+       <img
+         src="https://static.remove.bg/remove-bg-web/c05ac62d076574fad1fbc81404cd6083e9a4152b/assets/start-1abfb4fe2980eabfbbaaa4365a0692539f7cd2725f324f904565a9a744f8e214.jpg"
+         alt="contact img"
+         class="avatar-default avatar-default--profile">
+     </div>
+     <div class="message__content message__content--sent">
+       <p class="message__paragraph">lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet animi, asperiores eos error nostrum omnis quaerat reiciendis sed tenetur! Aperiam error eveniet exercitationem explicabo nostrum nulla odit quo quos, sed?</p>
+       <p class="message__time message__time--receiver">2:54 pm</p>
+     </div>
+   </div>
+ </div>
+
+
 </div>

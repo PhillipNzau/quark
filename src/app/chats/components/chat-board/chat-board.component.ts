@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chat-board.component.scss']
 })
 export class ChatBoardComponent implements OnInit {
+  count = [1,2,3,5,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1];
 
   constructor() { }
 

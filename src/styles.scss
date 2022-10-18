@@ -80,4 +80,19 @@ p.paragraph-default {
   -webkit-box-orient: vertical;
 }
 
+.avatar-default {
+  border-radius: 50%;
+  display: block;
+  object-fit: cover;
+
+  &--contacts {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  &--profile {
+    width: 3rem;
+    height: 3rem;
+  }
+}
 
