@@ -5,6 +5,8 @@ import { ChatsRoutingModule } from './chats-routing.module';
 import { ChatsComponent } from './chats.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { ChatBoardComponent } from './components/chat-board/chat-board.component';
+import {PickerModule} from "@ctrl/ngx-emoji-mart";
+import {FormsModule} from "@angular/forms";
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { ChatBoardComponent } from './components/chat-board/chat-board.component
   ],
   imports: [
     CommonModule,
-    ChatsRoutingModule
+    ChatsRoutingModule,
+    PickerModule,
+    FormsModule
   ]
 })
 export class ChatsModule { }
