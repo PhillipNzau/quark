@@ -1,4 +1,6 @@
 @import "colors";
+@import 'mixins';
+
 .side-nav {
   position: relative;
 
@@ -6,9 +8,18 @@
   width: 30rem;
   height: 100vh;
 
+  @include respond(laptop) {
+    //display: none;
+  }
+
+
 }
 .main-content {
   width: calc(100vw - 30rem);
   height: 100vh;
   background-color: lighten(gray, 75%);
+
+  @include respond(laptop) {
+    //width: 100vw;
+  }
 }

@@ -22,6 +22,12 @@ body {
   box-sizing: border-box;
   height: 100vh;
   background-color: $color-primary;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  -ms-overflow-style: none;
+  scroll-behavior: smooth;
 }
 
 
@@ -95,4 +101,5 @@ p.paragraph-default {
     height: 3rem;
   }
 }
+
 

@@ -113,3 +113,19 @@ input.search-user {
   }
 }
 
+.collapse__btn {
+  position: absolute;
+  background-color: lighten($color-secondary, 1%);
+  top: 0;
+  left: 100%;
+
+  &__svg {
+    width: 2rem ;
+    height: 2rem ;
+    color: white;
+  }
+}
+
+.close__side {
+
+}
