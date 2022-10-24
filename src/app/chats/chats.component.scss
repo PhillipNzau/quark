@@ -8,18 +8,89 @@
   width: 30rem;
   height: 100vh;
 
-  @include respond(laptop) {
-    //display: none;
+  @include respond(phone) {
+    display: none;
   }
 
 
 }
+
 .main-content {
   width: calc(100vw - 30rem);
   height: 100vh;
   background-color: lighten(gray, 75%);
 
-  @include respond(laptop) {
-    //width: 100vw;
+  @include respond(phone) {
+    width: 100%;
   }
 }
+
+.collapse__btn {
+  position: absolute;
+  background-color: lighten($color-secondary, 1%);
+  top: 0;
+  left: 100%;
+
+  &__svg {
+    width: 2.5rem;
+    height: 2.5rem;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+// Responsive side nav
+.side {
+  &--hide {
+    width: 0;
+  }
+
+  &--open {
+    width: 100%;
+  }
+}
+
+.nav {
+  &--hide {
+    display: none;
+
+  }
+
+  &--open {
+    display: block;
+    width: 100%;
+  }
+}
+
+.main {
+  &--open {
+    width: 100%;
+  }
+
+  &--close {
+    width: 0;
+    display: none;
+  }
+}
+
+.back__to__nav {
+  position: absolute;
+  top: 3%;
+  left: 2%;
+  &__svg {
+    width: 2.5rem ;
+    height: 2.5rem ;
+    cursor: pointer;
+  }
+  display: none;
+
+  @include respond(phone) {
+    display: block;
+  }
+}
+
+.hide__nav__toggle {
+  display: none;
+}
+
+///////////////////////

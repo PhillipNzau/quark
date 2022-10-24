@@ -1,9 +1,28 @@
 <div class="chats-main d-flex">
-  <div class="side-nav">
-    <app-contacts></app-contacts>
+  <div class="side-nav" [ngClass]="{'side--hide': isSideOpen, 'nav--open': openNav}">
+    <app-contacts [ngClass]="{'nav--hide': isSideOpen}" (chatSelected)="openNav = !$event"></app-contacts>
+    <div class="collapse__btn" [ngClass]="{'hide__nav__toggle': openNav}">
+      <div class="collapse__btn-open" *ngIf="isSideOpen" >
+        <svg (click)="toggleSide()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="collapse__btn__svg w-6 h-6">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M11.25 4.5l7.5 7.5-7.5 7.5m-6-15l7.5 7.5-7.5 7.5" />
+        </svg>
+      </div>
+
+      <div class="collapse__btn-close" *ngIf="!isSideOpen">
+        <svg (click)="toggleSide()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 collapse__btn__svg">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M18.75 19.5l-7.5-7.5 7.5-7.5m-6 15L5.25 12l7.5-7.5" />
+        </svg>
+      </div>
+    </div>
   </div>
 
-  <div class="main-content">
+
+  <div class="main-content" [ngClass]="{'main--open': isSideOpen, 'main--close': openNav }">
+    <div class="back__to__nav" (click)="toggleOpenNav()">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 back__to__nav__svg">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M9 15L3 9m0 0l6-6M3 9h12a6 6 0 010 12h-3" />
+      </svg>
+    </div>
     <app-chat-board></app-chat-board>
   </div>
 </div>

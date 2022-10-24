@@ -6,10 +6,19 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./chats.component.scss']
 })
 export class ChatsComponent implements OnInit {
-
+  isSideOpen = false;
+  openNav = false;
+  // data = {id, stat}
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  toggleSide() {
+    this.isSideOpen = !this.isSideOpen;
+  }
+
+  toggleOpenNav() {
+    this.openNav = !this.openNav;
+  }
 }
