@@ -7,6 +7,7 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { ChatBoardComponent } from './components/chat-board/chat-board.component';
 import {PickerModule} from "@ctrl/ngx-emoji-mart";
 import {FormsModule} from "@angular/forms";
+import {Ng2SearchPipeModule} from "ng2-search-filter";
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import {FormsModule} from "@angular/forms";
     CommonModule,
     ChatsRoutingModule,
     PickerModule,
-    FormsModule
+    FormsModule,
+    Ng2SearchPipeModule
   ]
 })
 export class ChatsModule { }

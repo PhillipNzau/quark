@@ -8,14 +8,34 @@
       <div class="status-badge status-badge--online">
       </div>
     </div>
-    <div class="chat-profile-name">
+    <div class="chat-profile-name" [ngClass]="{'icon--hidden': isSearchOpen}" >
       <p class="heading-default heading-default--black ">Mathew </p>
       <p class="paragraph-default limit-text">Down for a good time</p>
     </div>
   </div>
 
   <div class="chat-profile-setting dropup-center dropup">
-    <svg class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-offset="0,14" aria-expanded="false" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
+    <div>
+      <div class="chat-profile-search">
+        <input [(ngModel)]="searchText"
+               [ngClass]="{'search-chat--open': isSearchOpen}"
+               autocomplete="off"
+               type="text"
+               class="form-control search-chat"
+               aria-label="Sizing example input"
+               placeholder="Search chat...">
+
+        <svg [ngClass]="{'icon--hidden': isSearchOpen}" (click)="isSearchOpen = true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 search__icon">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+        </svg>
+
+        <svg [ngClass]="{'icon--hidden': !isSearchOpen}" (click)="isSearchOpen = false" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6  search__icon search__icon--close">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </div>
+    </div>
+
+    <svg [ngClass]="{'icon--hidden': isSearchOpen}"  class="dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-offset="0,14" aria-expanded="false" xmlns="http://www.w3.org/2000/svg" width="192" height="192" fill="#000000" viewBox="0 0 256 256">
       <rect width="256" height="256" fill="none"></rect>
       <circle cx="128" cy="128" r="12"></circle>
       <circle cx="192" cy="128" r="12"></circle>
@@ -39,7 +59,7 @@
 <!--chat display section-->
 <div class="chat-container">
   <p class="paragraph-default text-center">YESTERDAY</p>
- <div *ngFor="let _ of count">
+ <div *ngFor="let hero of heroes | filter:searchText">
    <div class="message message__sender">
      <div class="profile-tab-image contact-image message__icon message__icon--sender">
        <img
@@ -48,8 +68,8 @@
          class="avatar-default avatar-default--profile">
      </div>
      <div class="message__content message__content--received">
-       <p class="message__paragraph">lorem Lorem Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, amet atque ducimus ea explicabo facere hic illum ipsam itaque iure porro, quam repudiandae rerum sed sint suscipit voluptate. Perspiciatis, veritatis! </p>
-       <p class="message__time message__time--sender">2:54 pm</p>
+       <p class="message__paragraph">{{hero.message}}</p>
+       <p class="message__time message__time--sender">{{hero.time}}</p>
      </div>
    </div>
 
@@ -61,8 +81,8 @@
          class="avatar-default avatar-default--profile">
      </div>
      <div class="message__content message__content--sent">
-       <p class="message__paragraph">lorem Lorem ipsum</p>
-       <p class="message__time message__time--receiver">2:54 pm</p>
+       <p class="message__paragraph">{{hero.message}}</p>
+       <p class="message__time message__time--receiver">{{hero.time}}</p>
      </div>
    </div>
  </div>
@@ -84,7 +104,7 @@
 
   <textarea class="form-control send-message" placeholder="Type a message" type="text" name="textarea" [(ngModel)]="textArea"></textarea>
 
-  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 send-icon">
+  <svg (click)="sendMessage()" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 send-icon">
     <path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5" />
   </svg>
 </div>

@@ -12,7 +12,7 @@
   align-items: center;
   justify-content: space-between;
 
-  padding: 0 5rem ;
+  padding: 0 1rem 0 5rem;
 
 }
 .chat-profile {
@@ -33,7 +33,44 @@
   &-name {
     padding: 0 3rem;
   }
+
+  &-search {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    input.search-chat {
+      display: none;
+
+      &--open {
+        display: block;
+        width: 24.5rem;
+        height: 4.5rem;
+        border-radius: 1rem;
+        font-size: 1.2rem;
+      }
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    svg.search__icon {
+      width: 2.5rem;
+      height: 2.5rem ;
+      fill: transparent;
+
+      &--close {
+        margin: 0 1rem;
+      }
+    }
+
+  }
+
   &-setting {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     svg {
       fill: $color-gray-1;
       width: 5rem;
@@ -41,6 +78,14 @@
 
       cursor: pointer;
     }
+  }
+}
+.search__bar {
+  &--open {
+
+  }
+  &--close {
+    display: none;
   }
 }
 
@@ -60,6 +105,12 @@ ul.show {
   padding: 0;
   background-color: #0c0711;
 }
+
+.icon--hidden {
+  display: none;
+}
+
+
 .chat-container {
   height: calc(100vh - 14rem);
   overflow-x: scroll;
@@ -114,14 +165,14 @@ ul.show {
 
   &__time {
     padding: 0 2rem 1rem;
-    margin-top: -1rem;
+    margin-top: -.5rem;
     color: #9b9999;
     &--sender {
-      text-align: end;
+      text-align: start;
     }
 
     &--receiver {
-      text-align: start;
+      text-align: end;
     }
   }
 }
