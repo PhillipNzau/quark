@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import * as dayjs from 'dayjs'
 @Component({
   selector: 'app-chat-board',
   templateUrl: './chat-board.component.html',
@@ -22,6 +22,7 @@ export class ChatBoardComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+    console.log(dayjs())
   }
 
   addEmoji($event: any) {
